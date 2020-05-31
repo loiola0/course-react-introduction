@@ -3,7 +3,7 @@ import React from 'react';
 const buttonA = <button>Exibir Histórico</button>
 const buttonB = <button>Cadastrar Cliente</button>
 
-const hasCustomer = false;
+const hasCustomer = true;
 
 const App = () => {
   {}
@@ -22,6 +22,16 @@ const App = () => {
       {buttonB}
     </div>
   )
+
+  const showCustomer = () => {
+    if(!hasCustomer) return null
+
+    return (
+      <div>
+        <h1>Nome do cliente: Victor Gabriel</h1>
+      </div>
+    )
+  }
   
   return (
     <div>
@@ -30,7 +40,11 @@ const App = () => {
       <p>if inline com && operator/else inline</p>
       
       {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+      <div>
+        {showCustomer()}
       </div>
+      </div>
+      
   );
 ;}
 
