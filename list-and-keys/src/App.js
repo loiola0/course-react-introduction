@@ -1,7 +1,11 @@
 import React from 'react';
 
-const buttonA = <button>Exibir Histórico</button>
-const buttonB = <button>Cadastrar Cliente</button>
+
+const showEvent = (e) =>{
+  console.log('evento clicado');
+}
+
+const button = <button onClick={showEvent}>Mostrar Evento</button>
 
 const listCustomer = [
   {
@@ -53,6 +57,10 @@ const App = () => {
     );
   }
 
+  const handleChange = (e) =>{
+    const {value} = e.target;
+    console.log(value);
+  }
 
   return (
     <div>
@@ -66,6 +74,13 @@ const App = () => {
         </ul>
 
       </div>
+      <br/>
+        <div>
+          {/* Aula sobre manipulando eventos */}
+            <input onChange={handleChange}/>
+            {button}
+        </div>
+
       </div>
       
   );
