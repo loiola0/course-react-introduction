@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
     //onde o webpack vai pegar os arquivos para montar a árvore
     //mode:"production",
+    devtool: 'source-map',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname,'dist'),
